@@ -165,3 +165,5 @@ $RECYCLE.BIN/
 
 .flattened-pom.xml
 .vscode/
+/target\generated-sources\annotations/
+/target\generated-test-sources\test-annotations/

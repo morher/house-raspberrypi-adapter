@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.morher.house</groupId>
 		<artifactId>house-adapters-parent</artifactId>
-		<version>1.3</version>
+		<version>1.8</version>
 	</parent>
 
 	<name>Raspberry Pi Adapter</name>
@@ -25,7 +25,6 @@
 			<artifactId>diozero-core</artifactId>
 			<version>1.3.4</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>

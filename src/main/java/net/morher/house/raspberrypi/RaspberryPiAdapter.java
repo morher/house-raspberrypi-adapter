@@ -6,6 +6,7 @@ import net.morher.house.raspberrypi.blinds.BlindsRemoteController;
 import net.morher.house.raspberrypi.cmdswitch.CommandSwitchController;
 import net.morher.house.raspberrypi.config.RaspberryPiAdapterConfig;
 import net.morher.house.raspberrypi.config.RaspberryPiConfig;
+import net.morher.house.raspberrypi.sound.SoundController;
 
 public class RaspberryPiAdapter {
   public static void main(String[] args) throws Exception {
@@ -21,5 +22,7 @@ public class RaspberryPiAdapter {
     new BlindsRemoteController(deviceManager).configure(config.getBlindsRemotes());
 
     new CommandSwitchController(deviceManager).configure(config.getCommandSwitches());
+
+    new SoundController(deviceManager).configure(config.getSpeakers(), config.getSounds());
   }
 }

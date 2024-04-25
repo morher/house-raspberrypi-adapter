@@ -1,15 +1,19 @@
 package net.morher.house.raspberrypi.config;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import lombok.Data;
 import net.morher.house.api.config.DeviceName;
 
 @Data
 public class RaspberryPiConfig {
 
-  private List<BlindsRemoteConfig> blindsRemotes = new ArrayList<>();
-  private List<CommandSwitchConfig> commandSwitches = new ArrayList<>();
+  private final List<BlindsRemoteConfig> blindsRemotes = new ArrayList<>();
+  private final List<CommandSwitchConfig> commandSwitches = new ArrayList<>();
+  private final List<SpeakerConfig> speakers = new ArrayList<>();
+  private final Map<String, SoundConfig> sounds = new HashMap<>();
 
   @Data
   public static class BlindsRemoteConfig {
@@ -48,5 +52,15 @@ public class RaspberryPiConfig {
     private DeviceName device;
     private String[] onCommand;
     private String[] offCommand;
+  }
+
+  @Data
+  public static class SpeakerConfig {
+    private DeviceName device;
+  }
+
+  @Data
+  public static class SoundConfig {
+    private String file;
   }
 }
