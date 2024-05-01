@@ -15,6 +15,7 @@ import net.morher.house.raspberrypi.config.RaspberryPiConfig.SpeakerConfig;
 public class SoundController {
   private final DeviceManager deviceManager;
   private final Map<String, Sound> sounds = new HashMap<>();
+  private final TextToSpeach tts = new TextToSpeach();
 
   public void configure(List<SpeakerConfig> list, Map<String, SoundConfig> map) {
     map.forEach(this::configureSound);
@@ -29,6 +30,6 @@ public class SoundController {
   private void configureSpeaker(SpeakerConfig config) {
     Device device = deviceManager.device(config.getDevice().toDeviceId());
 
-    new Speaker(device.entity(AudioVideoDevice.SOUND_COMMAND), sounds);
+    new Speaker(device.entity(AudioVideoDevice.SOUND_COMMAND), sounds, tts);
   }
 }
